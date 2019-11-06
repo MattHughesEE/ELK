@@ -83,7 +83,8 @@
   register: filebeatJSON_output
 - debug: 
     var=filebeatJSON_output
-  until: '"json" in filebeatJSON_output and filebeatJSON_output.json.acknowledged == true'
+  #until: '"json" in filebeatJSON_output and filebeatJSON_output.json.acknowledged == true'
+  until: '"json" in filebeatJSON_output and filebeatJSON_output.acknowledged == true'
   retries: 30
   delay: 10
   become: true
