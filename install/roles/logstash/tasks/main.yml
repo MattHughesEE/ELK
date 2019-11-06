@@ -86,6 +86,8 @@
   delay: 10
   become: true
   when: not install_elasticsearch_xpack or not install_logstash_xpack or not install_kibana_xpack
+- debug: 
+    var=filebeatJSON_output
 
 # X-Pack requires additional authentication
 - name: Load filebeat JSON index template (X-Pack enabled)
